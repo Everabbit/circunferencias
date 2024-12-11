@@ -1,0 +1,141 @@
+/* Estilos Personalizados para Circle Universe */
+
+/* Estilo para campos de input */
+.input-field {
+    width: 100%;
+    /* Preenche a largura total */
+    padding: 0.5rem 0.75rem;
+    /* Espaçamento interno */
+    border: 1px solid #d1d5db;
+    /* Cor da borda */
+    border-radius: 0.375rem;
+    /* Bordas arredondadas */
+    outline: none;
+    /* Remove contorno padrão ao focar */
+    transition: ring 0.2s ease-in-out;
+    /* Transição suave ao focar */
+}
+
+.input-field:focus {
+    border-color: transparent;
+    /* Remove a cor da borda ao focar */
+}
+
+/* Estilo para botão primário */
+.btn-primary {
+    background-color: #6366f1;
+    /* Cor de fundo */
+    color: white;
+    /* Cor do texto */
+    font-weight: 600;
+    /* Peso da fonte */
+    text-transform: uppercase;
+    /* Texto em maiúsculas */
+    padding: 0.5rem 1rem;
+    /* Espaçamento interno */
+    border-radius: 0.375rem;
+    /* Bordas arredondadas */
+    text-align: center;
+    /* Centraliza o texto */
+    letter-spacing: 0.05em;
+    /* Espaçamento entre letras */
+    border: 2px solid transparent;
+    /* Borda transparente para efeito de foco */
+    cursor: pointer;
+    /* Cursor de ponteiro ao passar o mouse */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Sombra suave */
+    transition: all 0.3s ease;
+    /* Transição suave para todos os efeitos */
+}
+
+/* Efeito de hover e foco no botão */
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: #4f46e5;
+    /* Cor de fundo ao passar o mouse ou focar */
+    border-color: #4338ca;
+    /* Cor da borda ao passar o mouse ou focar */
+    box-shadow: 0 4px 8px rgba(67, 56, 202, 0.4);
+    /* Sombra mais intensa */
+}
+
+/* Efeito ao clicar no botão */
+.btn-primary:active {
+    transform: scale(0.95);
+    /* Reduz o tamanho do botão ao clicar */
+}
+
+/* Ajustes para telas pequenas */
+@media (max-width: 640px) {
+    .container {
+        padding: 0 0.5rem;
+        /* Ajusta o padding em telas pequenas */
+    }
+}
+
+/* Efeitos de transição suaves */
+* {
+    transition: all 0.3s ease;
+    /* Aplica transições suaves em todos os elementos */
+}
+
+/* Efeito de transição para sombras em sections */
+section {
+    transition: box-shadow 0.3s ease-in-out;
+    /* Transição suave para sombras */
+}
+
+section:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+    /* Sombra ao passar o mouse */
+}
+
+/* Estilo de texto com gradiente */
+.text-gradient {
+    background: linear-gradient(to right, #6366f1, #8b5cf6);
+    /* Gradiente de cor */
+    -webkit-background-clip: text;
+    /* Aplica o gradiente apenas ao texto */
+    -webkit-text-fill-color: transparent;
+    /* Torna o texto transparente */
+}
+
+/* Animação para os blocos de resultado */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    /* Inicializa com opacidade 0 e deslocamento */
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Finaliza com opacidade 1 e posição original */
+}
+
+#equationResult,
+#pointResult,
+#lineResult {
+    animation: fadeIn 0.5s ease-out;
+    /* Aplica a animação de fadeIn */
+}
+
+/* Suporte ao modo escuro */
+@media (prefers-color-scheme: dark) {
+    .btn-primary {
+        background-color: #4f46e5;
+        /* Cor de fundo no modo escuro */
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus {
+        background-color: #4338ca;
+        /* Cor de fundo ao passar o mouse ou focar no modo escuro */
+        box-shadow: 0 4px 8px rgba(99, 102, 241, 0.4);
+        /* Sombra mais intensa no modo escuro */
+    }
+}

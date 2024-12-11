@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Universo das Circunferências</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl font-bold text-indigo-800 mb-4">
+                <i class="fas fa-circle mr-3 text-indigo-500"></i>
+                Universo das Circunferências
+            </h1>
+            <p class="text-xl text-gray-600">
+                Explorando os segredos matemáticos das circunferências
+            </p>
+        </header>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Teoria Section -->
+            <section class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
+                    <i class="fas fa-book mr-3 text-indigo-500"></i>
+                    Teoria das Circunferências
+                </h2>
+
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="font-semibold text-indigo-600 mb-3">Definição</h3>
+                        <p class="text-gray-700">
+                            Uma circunferência é o conjunto de todos os pontos no plano que estão a 
+                            uma distância fixa (raio) de um ponto central.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-indigo-600 mb-3">Elementos Principais</h3>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li><strong>Centro:</strong> Ponto fixo de referência</li>
+                            <li><strong>Raio:</strong> Distância do centro a qualquer ponto</li>
+                            <li><strong>Diâmetro:</strong> Dobro do raio</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-semibold text-indigo-600 mb-3">Equação Geral</h3>
+                        <div class="bg-blue-50 p-4 rounded-lg text-center">
+                            <code class="text-xl font-bold text-indigo-800">
+                                (x - h)² + (y - k)² = r²
+                            </code>
+                        </div>
+                        <div class="mt-3 text-gray-700">
+                            <p>Onde:</p>
+                            <ul class="list-disc list-inside">
+                                <li><strong>h</strong>: Coordenada x do centro</li>
+                                <li><strong>k</strong>: Coordenada y do centro</li>
+                                <li><strong>r</strong>: Raio da circunferência</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Calculadoras Section -->
+            <section class="bg-white rounded-xl shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
+                    <i class="fas fa-calculator mr-3 text-indigo-500"></i>
+                    Calculadoras
+                </h2>
+
+                <!-- Equação da Circunferência -->
+                <div class="mb-8">
+                    <h3 class="font-semibold text-indigo-600 mb-4">Equação da Circunferência</h3>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <input type="number" id="centerX" placeholder="Centro X" 
+                               class="input-field">
+                        <input type="number" id="centerY" placeholder="Centro Y" 
+                               class="input-field">
+                        <input type="number" id="radius" placeholder="Raio" 
+                               class="input-field col-span-2">
+                    </div>
+                    <button id="calcEquation" class="btn-primary w-full">
+                        Calcular Equação
+                    </button>
+                    <div id="equationResult" class="mt-4 bg-blue-50 p-3 rounded text-center"></div>
+                </div>
+
+                <!-- Posição do Ponto -->
+                <div>
+                    <h3 class="font-semibold text-indigo-600 mb-4">Posição do Ponto</h3>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <input type="number" id="pointX" placeholder="Ponto X" 
+                               class="input-field">
+                        <input type="number" id="pointY" placeholder="Ponto Y" 
+                               class="input-field">
+                        <input type="number" id="checkCenterX" placeholder="Centro X" 
+                               class="input-field">
+                        <input type="number" id="checkCenterY" placeholder="Centro Y" 
+                               class="input-field">
+                        <input type="number" id="checkRadius" placeholder="Raio" 
+                               class="input-field col-span-2">
+                    </div>
+                    <button id="checkPoint" class="btn-primary w-full">
+                        Verificar Posição do Ponto
+                    </button>
+                    <div id="pointResult" class="mt-4 bg-blue-50 p-3 rounded text-center"></div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Posição da Reta Section -->
+        <section class="bg-white rounded-xl shadow-lg p-6 mt-8">
+            <h2 class="text-2xl font-bold text-indigo-700 mb-6 flex items-center">
+                <i class="fas fa-ruler mr-3 text-indigo-500"></i>
+                Relação da Reta com a Circunferência
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="font-semibold text-indigo-600 mb-3">Parâmetros da Reta</h3>
+                    <div class="grid grid-cols-2 gap-4 mb-4">
+                        <input type="number" id="lineA" placeholder="Coef. Angular (a)" 
+                               class="input-field">
+                        <input type="number" id="lineB" placeholder="Coef. Linear (b)" 
+                               class="input-field">
+                        <input type="number" id="lineCenterX" placeholder="Centro X" 
+                               class="input-field">
+                        <input type="number" id="lineCenterY" placeholder="Centro Y" 
+                               class="input-field">
+                        <input type="number" id="lineRadius" placeholder="Raio" 
+                               class="input-field col-span-2">
+                    </div>
+                    <button id="checkLine" class="btn-primary w-full">
+                        Verificar Relação da Reta
+                    </button>
+                    <div id="lineResult" class="mt-4 bg-blue-50 p-3 rounded text-center"></div>
+                </div>
+
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h4 class="font-semibold text-indigo-700 mb-3">Tipos de Interseção</h4>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li><strong>Secante:</strong> Corta a circunferência em dois pontos</li>
+                        <li><strong>Tangente:</strong> Toca a circunferência em um ponto</li>
+                        <li><strong>Externa:</strong> Não intercepta a circunferência</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="bg-white shadow-md py-6 mt-8 text-center">
+        <p class="text-gray-600">
+            © 2024 Universo das Circunferências | Explorando a Matemática
+        </p>
+        <p class="text-gray-600">
+            Wendel Coelho - Gabriel Canto - Filipe Centeno da Rocha - Gabriel Rodrigues - Thiago Sopeña
+        </p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
